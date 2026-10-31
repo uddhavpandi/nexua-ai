@@ -1,0 +1,22 @@
+{
+  "date": ["date", "order_date", "orderdate", "transaction_date", "invoice_date",
+           "txn_date", "purchase_date", "sale_date", "order date", "ship_date",
+           "shipdate", "created_at", "timestamp"],
+  "sales": ["sales", "revenue", "amount", "amt", "total", "total_sales",
+            "sale_amount", "grand_total", "totalamount", "sales_amount",
+            "net_sales", "value"],
+  "price": ["price", "unit_price", "unitprice", "cost", "rate", "mrp"],
+  "quantity": ["quantity", "qty", "units", "units_sold", "unitssold", "count",
+               "order_quantity", "orderquantity"],
+  "product": ["product", "item", "product_name", "productname", "sku",
+              "item_name", "itemname", "product_id", "productid"],
+  "category": ["category", "product_category", "productcategory", "type",
+               "segment", "sub_category", "subcategory", "genre"],
+  "customer": ["customer", "customer_id", "customerid", "client", "cust_id",
+               "custid", "customer_name", "customername", "buyer"],
+  "region": ["region", "state", "country", "location", "area", "city",
+             "market", "territory"],
+  "profit": ["profit", "margin", "net_profit", "gross_profit", "profitmargin"],
+  "discount": ["discount", "disc", "discount_pct", "discountpercent"],
+  "payment_method": ["payment_method", "paymentmethod", "payment_type", "pay_mode"]
+}

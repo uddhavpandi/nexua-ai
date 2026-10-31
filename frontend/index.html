@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexusAI — Next-Gen AI Business Intelligence & Real-Time Decision Automation</title>
+  <meta name="description" content="Autonomous AI Business Intelligence, TypeSafe Jev table understanding, RFM customer behavioral analytics, and real-time live news strategic decision automation.">
+  
+  <!-- Modern Typography: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js 4.4 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background decorative glows -->
+  <div class="bg-glow glow-top-left"></div>
+  <div class="bg-glow glow-top-right"></div>
+  <div class="bg-glow glow-center"></div>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="logo-grad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+              <stop id="logo-stop-1" stop-color="#38BDF8"/>
+              <stop id="logo-stop-2" offset="0.5" stop-color="#818CF8"/>
+              <stop id="logo-stop-3" offset="1" stop-color="#C084FC"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-title">Nexus<span class="gradient-text">AI</span></div>
+        <div class="brand-subtitle">Autonomous BI & Real-Time Market Decision Engine</div>
+      </div>
+    </div>
+
+    <div class="header-center" id="company-badge-wrap" style="display: none;">
+      <span class="context-pill">
+        <span class="pulse-dot"></span>
+        <span id="detected-industry-text">Detecting Company Domain...</span>
+      </span>
+    </div>
+
+    <div class="header-right">
+      <!-- Theme Switcher Controls -->
+      <div class="theme-controls-group">
+        <!-- Dropdown for 6 Frontend Types -->
+        <div class="theme-picker-container" id="theme-picker-container">
+          <button class="theme-picker-btn" id="btn-theme-picker" aria-haspopup="true" aria-expanded="false" title="Switch Frontend Style (6 Themes)">
+            <span class="theme-active-dot" id="theme-active-dot"></span>
+            <span class="theme-active-name" id="theme-active-name">Nexus Classic</span>
+            <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          
+          <div class="theme-menu dropdown-hidden" id="theme-menu">
+            <div class="theme-menu-title">Frontend Design Style</div>
+            <div class="theme-menu-items">
+              <button class="theme-item active" data-theme="nexus-classic">
+                <span class="swatch swatch-nexus"></span>
+                <div class="theme-meta">
+                  <div class="theme-title">Nexus Classic</div>
+                  <div class="theme-subtitle">Cyber Indigo & Cyan (Original)</div>
+                </div>
+                <span class="check-mark">✓</span>
+              </button>
+              <button class="theme-item" data-theme="datava">
+                <span class="swatch swatch-datava"></span>
+                <div class="theme-meta">
+                  <div class="theme-title">Datava</div>
+                  <div class="theme-subtitle">Vibrant Violet & Lavender</div>
+                </div>
+                <span class="check-mark">✓</span>
+              </button>
+              <button class="theme-item" data-theme="nexora">
+                <span class="swatch swatch-nexora"></span>
+                <div class="theme-meta">
+                  <div class="theme-title">Nexora</div>
+                  <div class="theme-subtitle">Emerald Mint & Eco-Tech</div>
+                </div>
+                <span class="check-mark">✓</span>
+              </button>
+              <button class="theme-item" data-theme="pulseai">
+                <span class="swatch swatch-pulseai"></span>
+                <div class="theme-meta">
+                  <div class="theme-title">PulseAI</div>
+                  <div class="theme-subtitle">Sunset Peach & Warm Amber</div>
+                </div>
+                <span class="check-mark">✓</span>
+              </button>
+              <button class="theme-item" data-theme="cosmic-nebula">
+                <span class="swatch swatch-cosmic"></span>
+                <div class="theme-meta">
+                  <div class="theme-title">Cosmic Nebula</div>
+                  <div class="theme-subtitle">Electric Magenta & Cyber Pink</div>
+                </div>
+                <span class="check-mark">✓</span>
+              </button>
+              <button class="theme-item" data-theme="obsidian-onyx">
+                <span class="swatch swatch-obsidian"></span>
+                <div class="theme-meta">
+                  <div class="theme-title">Obsidian Onyx</div>
+                  <div class="theme-subtitle">Monochrome Titanium & Slate</div>
+                </div>
+                <span class="check-mark">✓</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dark / Light Mode Toggle Button -->
+        <button class="mode-toggle-btn" id="btn-mode-toggle" title="Toggle Dark / Light Mode">
+          <span class="mode-icon-sun">☀️</span>
+          <span class="mode-icon-moon">🌙</span>
+          <span class="mode-label" id="mode-label">Dark</span>
+        </button>
+      </div>
+
+      <div class="status-indicator" id="system-status-indicator" title="System Status">
+        <span class="status-dot"></span>
+        <span class="status-label" id="status-label">Engine Ready</span>
+      </div>
+      <button class="btn btn-secondary btn-sm" id="btn-open-key-modal" title="Configure TypeSafe Jev API Key">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+        <span id="api-key-btn-text">TypeSafe Jev</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Quick Theme Selection Bar -->
+    <div class="theme-quick-bar glass-card">
+      <div class="quick-bar-left">
+        <span class="quick-bar-title"><span class="sparkle-icon">✨</span> Frontend Design Type:</span>
+        <div class="quick-theme-pills">
+          <button class="quick-pill active" data-pill-theme="nexus-classic" title="Cyber Indigo & Cyan">
+            <span class="pill-dot swatch-nexus"></span>
+            <span>Nexus Classic</span>
+          </button>
+          <button class="quick-pill" data-pill-theme="datava" title="Vibrant Violet & Lavender">
+            <span class="pill-dot swatch-datava"></span>
+            <span>Datava</span>
+          </button>
+          <button class="quick-pill" data-pill-theme="nexora" title="Emerald Mint & Eco-Tech">
+            <span class="pill-dot swatch-nexora"></span>
+            <span>Nexora</span>
+          </button>
+          <button class="quick-pill" data-pill-theme="pulseai" title="Sunset Peach & Warm Amber">
+            <span class="pill-dot swatch-pulseai"></span>
+            <span>PulseAI</span>
+          </button>
+          <button class="quick-pill" data-pill-theme="cosmic-nebula" title="Electric Magenta & Neon">
+            <span class="pill-dot swatch-cosmic"></span>
+            <span>Cosmic Nebula</span>
+          </button>
+          <button class="quick-pill" data-pill-theme="obsidian-onyx" title="Monochrome Titanium & Slate">
+            <span class="pill-dot swatch-obsidian"></span>
+            <span>Obsidian Onyx</span>
+          </button>
+        </div>
+      </div>
+      <div class="quick-bar-right">
+        <button class="quick-mode-pill" id="btn-quick-mode" title="Switch between Dark and Light mode">
+          <span class="quick-mode-icon">🌙</span>
+          <span class="quick-mode-text" id="quick-mode-text">Dark Mode</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- DATA INGESTION CARD -->
+    <section class="card glass-card upload-section" id="upload-card">
+      <div class="upload-inner">
+        <div class="upload-dropzone" id="dropzone">
+          <input type="file" id="file-input" accept=".csv,.xlsx,.xls" class="file-input-hidden">
+          <div class="dropzone-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+          </div>
+          <div class="dropzone-text">
+            <h3>Drag & Drop your Business Dataset</h3>
+            <p>Upload CSV or Excel (.xlsx) — Kaggle datasets, ERP exports, or sales databases.</p>
+          </div>
+          <div class="upload-actions">
+            <button class="btn btn-primary" id="btn-browse-file">Choose Dataset</button>
+            <span class="action-or">or</span>
+            <button class="btn btn-outline" id="btn-load-sample">
+              <span class="sparkle-icon">✨</span> Load Sample E-Commerce (2.5k Rows)
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="upload-status" id="upload-status"></div>
+    </section>
+
+    <!-- SCHEMA UNDERSTANDING & REVIEW MODAL/DRAWER -->
+    <section class="card glass-card mapping-section hidden" id="mapping-card">
+      <div class="card-header">
+        <div>
+          <div class="badge badge-indigo">
+            <span class="sparkle-icon">⚡</span> TypeSafe Jev & Semantic Schema Inference
+          </div>
+          <h2>Autonomous Table Understanding</h2>
+          <p class="section-desc">NexusAI analyzed your columns and detected their business roles. Review or adjust assignments below before running the intelligence pipeline.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-primary btn-glow" id="btn-run-full-analysis">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Execute BI & Decision Engine
+          </button>
+        </div>
+      </div>
+
+      <div class="schema-grid" id="schema-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- MAIN DASHBOARD CONTENT (Visible after analysis) -->
+    <div class="dashboard-wrapper hidden" id="dashboard-wrapper">
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" id="nav-tabs">
+        <button class="tab-btn active" data-tab="tab-overview">
+          <span class="tab-icon">📊</span> Executive Overview
+        </button>
+        <button class="tab-btn" data-tab="tab-forecast">
+          <span class="tab-icon">🔮</span> Predictive AI Forecast
+        </button>
+        <button class="tab-btn" data-tab="tab-customers">
+          <span class="tab-icon">👥</span> Customer RFM & Behavior
+        </button>
+        <button class="tab-btn" data-tab="tab-products">
+          <span class="tab-icon">🗺️</span> Products & Geography
+        </button>
+        <button class="tab-btn" data-tab="tab-news">
+          <span class="tab-icon">📰</span> Live News & AI Decision Hub
+          <span class="tab-badge" id="news-badge-count">Live</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-schema">
+          <span class="tab-icon">⚙️</span> Schema Mapping
+        </button>
+      </nav>
+
+      <!-- TAB 1: EXECUTIVE OVERVIEW -->
+      <div class="tab-pane active" id="tab-overview">
+        <!-- Automated Narrative Briefing -->
+        <div class="card glass-card narrative-card">
+          <div class="narrative-icon">🤖</div>
+          <div class="narrative-body">
+            <div class="narrative-title">Autonomous AI Executive Synthesis</div>
+            <p id="narrative-text">Analyzing dataset and synthesizing performance drivers...</p>
+          </div>
+        </div>
+
+        <!-- 6 Core KPIs -->
+        <div class="kpi-grid" id="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-label">Total Revenue</span><span class="kpi-icon">💰</span></div>
+            <div class="kpi-value" id="kpi-revenue">$0</div>
+            <div class="kpi-sub" id="kpi-revenue-sub">Top-line Gross Volume</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-label">Net Profit</span><span class="kpi-icon">📈</span></div>
+            <div class="kpi-value text-emerald" id="kpi-profit">$0</div>
+            <div class="kpi-sub" id="kpi-margin-sub">Margin: 0%</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-label">Average Order Value</span><span class="kpi-icon">💳</span></div>
+            <div class="kpi-value" id="kpi-aov">$0</div>
+            <div class="kpi-sub">Per Transaction Mean</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-label">Total Orders</span><span class="kpi-icon">📦</span></div>
+            <div class="kpi-value" id="kpi-orders">0</div>
+            <div class="kpi-sub" id="kpi-units-sub">Units Sold: 0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-label">Active Customers</span><span class="kpi-icon">👤</span></div>
+            <div class="kpi-value" id="kpi-customers">0</div>
+            <div class="kpi-sub" id="kpi-repeat-sub">Repeat Rate: 0%</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-label">Average Discount</span><span class="kpi-icon">🏷️</span></div>
+            <div class="kpi-value text-amber" id="kpi-discount">0%</div>
+            <div class="kpi-sub">Price Concession Impact</div>
+          </div>
+        </div>
+
+        <!-- Interactive Charts Row -->
+        <div class="charts-row">
+          <div class="card glass-card chart-card">
+            <div class="chart-header">
+              <h3>Monthly Revenue & Profit Timeline</h3>
+              <span class="chart-tag">Interactive Time-Series</span>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="chart-revenue-trend"></canvas>
+            </div>
+          </div>
+
+          <div class="card glass-card chart-card">
+            <div class="chart-header">
+              <h3>Category Revenue & Margins</h3>
+              <span class="chart-tag">Performance Contribution</span>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="chart-category-breakdown"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: PREDICTIVE AI FORECASTING -->
+      <div class="tab-pane" id="tab-forecast">
+        <div class="card glass-card">
+          <div class="card-header">
+            <div>
+              <h2>Predictive Multi-Period Forecasting</h2>
+              <p class="section-desc">Machine learning projections using Holt-Winters Exponential Smoothing with upper & lower 95% confidence intervals.</p>
+            </div>
+            <div class="forecast-controls">
+              <div class="control-group">
+                <label for="forecast-metric">Predict Target:</label>
+                <select id="forecast-metric" class="select-dark">
+                  <option value="sales">Revenue (Sales)</option>
+                  <option value="profit">Net Profit</option>
+                  <option value="quantity">Units Quantity</option>
+                  <option value="price">Unit Price</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label for="forecast-periods">Periods Ahead:</label>
+                <select id="forecast-periods" class="select-dark">
+                  <option value="3">3 Periods (Quarter)</option>
+                  <option value="6" selected>6 Periods (Half-Year)</option>
+                  <option value="12">12 Periods (Full Year)</option>
+                </select>
+              </div>
+              <button class="btn btn-primary btn-sm" id="btn-reforecast">Run Forecast</button>
+            </div>
+          </div>
+
+          <div class="forecast-meta-row">
+            <div class="meta-pill"><strong>Algorithm:</strong> <span id="forecast-algo-used">Exponential Smoothing</span></div>
+            <div class="meta-pill"><strong>Projected Growth:</strong> <span id="forecast-growth-metric" class="text-emerald">+0.0%</span></div>
+          </div>
+
+          <div class="chart-canvas-wrap forecast-canvas-wrap">
+            <canvas id="chart-forecast"></canvas>
+          </div>
+
+          <div class="forecast-table-wrap">
+            <h4>Projected Numbers & Confidence Range</h4>
+            <div class="table-responsive">
+              <table class="data-table" id="forecast-table">
+                <thead>
+                  <tr>
+                    <th>Future Period</th>
+                    <th>Lower Bound (95% CI)</th>
+                    <th>Projected Value</th>
+                    <th>Upper Bound (95% CI)</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: CUSTOMER RFM & BEHAVIOR -->
+      <div class="tab-pane" id="tab-customers">
+        <div class="charts-row">
+          <div class="card glass-card chart-card">
+            <div class="chart-header">
+              <h3>Customer RFM Segment Distribution</h3>
+              <span class="chart-tag">Recency • Frequency • Monetary</span>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="chart-rfm-doughnut"></canvas>
+            </div>
+          </div>
+
+          <div class="card glass-card">
+            <div class="chart-header">
+              <h3>Customer Retention & Value Concentration</h3>
+            </div>
+            <div class="rfm-metrics-list">
+              <div class="rfm-metric-item">
+                <div class="metric-top">
+                  <span class="metric-name">Repeat Purchase Rate</span>
+                  <span class="metric-val" id="cust-repeat-rate">0%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" id="bar-repeat-rate" style="width: 0%"></div></div>
+                <p class="metric-desc">Percentage of customer base ordering more than once.</p>
+              </div>
+              <div class="rfm-metric-item">
+                <div class="metric-top">
+                  <span class="metric-name">Top 10% Revenue Share (Pareto)</span>
+                  <span class="metric-val text-amber" id="cust-pareto-share">0%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill fill-amber" id="bar-pareto-share" style="width: 0%"></div></div>
+                <p class="metric-desc">Proportion of corporate revenue generated by the top decile of clients.</p>
+              </div>
+            </div>
+
+            <h4 class="subhead">Highest Value Key Accounts</h4>
+            <div class="table-responsive">
+              <table class="data-table" id="top-customers-table">
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Orders</th>
+                    <th>Total Spend</th>
+                    <th>Segment</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: PRODUCTS & GEOGRAPHY -->
+      <div class="tab-pane" id="tab-products">
+        <div class="charts-row">
+          <div class="card glass-card chart-card">
+            <div class="chart-header">
+              <h3>Top 10 Products by Total Revenue</h3>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="chart-top-products"></canvas>
+            </div>
+          </div>
+
+          <div class="card glass-card chart-card">
+            <div class="chart-header">
+              <h3>Geographic Sales Distribution</h3>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="chart-geo-distribution"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glass-card" id="crosstab-card">
+          <div class="chart-header">
+            <h3>Regional Category Matrix (Cross-Affinity)</h3>
+            <span class="chart-tag">Volume by Geography</span>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table" id="crosstab-table">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: LIVE NEWS & AI DECISION HUB -->
+      <div class="tab-pane" id="tab-news">
+
+        <!-- Executive Posture Banner -->
+        <div class="card glass-card posture-banner" id="posture-banner">
+          <div class="posture-left">
+            <div class="posture-badge" id="posture-badge">Analyzing Market Signals...</div>
+            <h2 id="posture-title">Market Environment Assessment</h2>
+            <p id="posture-desc">NexusAI continuously scans real-time business news, correlating production, tariffs, holiday demand, and regional crises with your company's product portfolio.</p>
+          </div>
+          <div class="posture-stats">
+            <div class="stat-box">
+              <div class="stat-num text-rose" id="threats-count">0</div>
+              <div class="stat-lbl">Active Risks / Tariffs</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num text-emerald" id="catalysts-count">0</div>
+              <div class="stat-lbl">Growth Catalysts</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Executive Strategic Directives -->
+        <div class="card glass-card">
+          <div class="chart-header">
+            <div class="badge badge-emerald"><span class="sparkle-icon">🎯</span> Proactive Leadership Directives</div>
+            <h3>Autonomous AI Decision Directives</h3>
+            <p class="section-desc">Actionable operational instructions synthesized directly from incoming live market events.</p>
+          </div>
+          <div class="directives-grid" id="directives-grid">
+            <!-- Dynamic Directives -->
+          </div>
+        </div>
+
+        <!-- News Feed Filters & Search -->
+        <div class="news-controls-row">
+          <div class="filter-pills" id="news-filters">
+            <button class="pill-btn active" data-filter="all">All Topics</button>
+            <button class="pill-btn" data-filter="Production, Freight">🚢 Production & Freight</button>
+            <button class="pill-btn" data-filter="Taxes, Tariffs">⚖️ Taxes & Tariffs</button>
+            <button class="pill-btn" data-filter="Festive, Seasonal">🎁 Festive Demand</button>
+            <button class="pill-btn" data-filter="Localized Crises">🌪️ Regional Crises</button>
+          </div>
+          <div class="search-wrap">
+            <input type="text" id="news-search-input" class="search-input" placeholder="Search specific keyword or product...">
+            <button class="btn btn-secondary btn-sm" id="btn-news-search">Track</button>
+          </div>
+        </div>
+
+        <!-- Live News Article Grid -->
+        <div class="news-grid" id="news-grid">
+          <div class="loading-state">
+            <div class="spinner"></div>
+            <p>Fetching real-time global news and calculating decision impact...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 6: SCHEMA MAPPING EDIT -->
+      <div class="tab-pane" id="tab-schema">
+        <div class="card glass-card">
+          <div class="card-header">
+            <div>
+              <h2>Configured Schema Mappings</h2>
+              <p class="section-desc">Change column assignments and re-run analysis dynamically without re-uploading.</p>
+            </div>
+            <button class="btn btn-primary" id="btn-re-analyze">Apply Changes & Recalculate</button>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table" id="manual-mapping-table">
+              <thead>
+                <tr>
+                  <th>Standard Business Role</th>
+                  <th>Mapped Dataset Column</th>
+                  <th>TypeSafe Classification Confidence</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- TypeSafe Jev API Key Modal -->
+  <div class="modal-backdrop hidden" id="key-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>TypeSafe Jev API Configuration</h3>
+        <button class="modal-close-btn" id="btn-close-key-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>NexusAI utilizes <strong>TypeSafe AI Jev (System One classification)</strong> for deterministic, sub-second table schema understanding.</p>
+        <p class="text-muted">If you have a TypeSafe API Key, paste it below. If empty, the engine uses our high-precision semantic fallback seamlessly.</p>
+        <div class="control-group" style="margin-top: 16px;">
+          <label for="input-typesafe-key">TypeSafe API Key:</label>
+          <input type="password" id="input-typesafe-key" class="input-dark" placeholder="ts_live_...">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="btn-cancel-key">Cancel</button>
+        <button class="btn btn-primary" id="btn-save-key">Save & Connect</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
